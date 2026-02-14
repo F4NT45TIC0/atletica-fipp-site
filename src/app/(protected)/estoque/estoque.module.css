@@ -1,0 +1,238 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pageSubtitle {
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+}
+
+.filters {
+    padding: var(--space-4) !important;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.searchInput {
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--gray-50);
+    color: var(--gray-900);
+    height: 40px;
+    transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--blue-500);
+    background: var(--white);
+    box-shadow: 0 0 0 3px var(--blue-100);
+}
+
+.searchInput::placeholder {
+    color: var(--gray-400);
+}
+
+.filterRow {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.filterSelect {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    color: var(--gray-700);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236B7280' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.filterSelect:focus {
+    outline: none;
+    border-color: var(--blue-500);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+}
+
+.productCard {
+    padding: var(--space-4) !important;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.productHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productType {
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.productName {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+}
+
+.productMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productSize {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+}
+
+.productPrice {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--blue-600);
+}
+
+.productDesc {
+    font-size: var(--text-xs);
+    color: var(--gray-400);
+    margin-top: var(--space-1);
+}
+
+/* Empty */
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-12) var(--space-4);
+    text-align: center;
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+    opacity: 0.3;
+}
+
+.empty h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-600);
+    margin-bottom: var(--space-1);
+}
+
+.empty p {
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+}
+
+/* Loading */
+.skeleton {
+    height: 160px;
+    background: var(--gray-100);
+    border-radius: var(--radius-lg);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    max-width: 600px;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.formSection h3 {
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.fieldLabel {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--gray-700);
+}
+
+.formActions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: flex-end;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--gray-100);
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .filterRow {
+        flex-direction: column;
+    }
+}
