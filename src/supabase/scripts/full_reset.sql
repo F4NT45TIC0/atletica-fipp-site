@@ -105,6 +105,7 @@ CREATE TABLE public.organizations (
   youtube_url TEXT,
   whatsapp TEXT,
   hero_title TEXT DEFAULT 'BEM-VINDO À',
+  hero_heading TEXT DEFAULT 'VISTA A',
   hero_subtitle TEXT,
   about_text TEXT,
   gallery_photos JSONB DEFAULT '[]'::jsonb,

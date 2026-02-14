@@ -108,6 +108,7 @@ export default function ConfigurarPage() {
         name: "",
         slug: "",
         hero_title: "",
+        hero_heading: "",
         hero_subtitle: "",
         about_text: "",
         primary_color: "#00B4FF",
@@ -127,6 +128,7 @@ export default function ConfigurarPage() {
             name: organization.name || "",
             slug: organization.slug || "",
             hero_title: organization.hero_title || "",
+            hero_heading: organization.hero_heading || "",
             hero_subtitle: organization.hero_subtitle || "",
             about_text: organization.about_text || "",
             primary_color: organization.primary_color || "#00B4FF",
@@ -206,6 +208,7 @@ export default function ConfigurarPage() {
                     name: form.name.trim(),
                     slug: cleanSlug,
                     hero_title: form.hero_title.trim() || null,
+                    hero_heading: form.hero_heading.trim() || null,
                     hero_subtitle: form.hero_subtitle.trim() || null,
                     about_text: form.about_text.trim() || null,
                     primary_color: form.primary_color,
@@ -317,10 +320,11 @@ export default function ConfigurarPage() {
                         style={{ background: isValidFullHex(form.bg_color) ? form.bg_color : "#0a0e1a", color: "#fff" }}
                     >
                         <span className={styles.previewTag} style={{ color: isValidFullHex(form.accent_color) ? form.accent_color : "#00B4FF" }}>
-                            {form.name || "SUA ATLÉTICA"}
+                            {form.hero_title || form.name || "SUA ATLÉTICA"}
                         </span>
                         <h3 className={styles.previewTitle}>
-                            <span style={{ color: isValidFullHex(form.primary_color) ? form.primary_color : "#00B4FF" }}>{form.hero_title || "BEM-VINDO"}</span>
+                            <span style={{ color: "#fff" }}>{form.hero_heading || "VISTA A"} </span>
+                            <span style={{ color: isValidFullHex(form.primary_color) ? form.primary_color : "#00B4FF" }}>{form.name.split(" ")[0].toUpperCase() || "ATLÉTICA"}</span>
                         </h3>
                         <p className={styles.previewSubtitle}>
                             {form.hero_subtitle || "Subtitulo da sua landing page aparece aqui..."}
@@ -345,7 +349,18 @@ export default function ConfigurarPage() {
                         onChange={(e) => updateField("hero_title", e.target.value)}
                         placeholder="ATLÉTICA FIPP"
                     />
-                    <span className={styles.fieldHint}>O título principal que aparece em destaque</span>
+                    <span className={styles.fieldHint}>O título pequeno que aparece acima do heading (ex: &quot;Atlética FIPP — Coleção 2025&quot;)</span>
+                </div>
+
+                <div className={styles.fieldGroup}>
+                    <label className={styles.fieldLabel}>Heading Principal</label>
+                    <input
+                        className={styles.fieldInput}
+                        value={form.hero_heading}
+                        onChange={(e) => updateField("hero_heading", e.target.value)}
+                        placeholder="VISTA A"
+                    />
+                    <span className={styles.fieldHint}>O texto grande do hero. O nome da atlética aparece ao lado automaticamente (ex: &quot;VISTA A&quot; + &quot;FIPP&quot;)</span>
                 </div>
 
                 <div className={styles.fieldGroup}>

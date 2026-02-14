@@ -553,7 +553,7 @@ export default function OrgLandingClient({ org, products }: Props) {
                         {org.hero_title || `${org.name} — Coleção 2025`}
                     </span>
                     <h1 className={styles.heroTitle}>
-                        VISTA A{" "}
+                        {org.hero_heading || "VISTA A"}{" "}
                         <GlowText className={styles.heroTitleAccent} accentColor={accentColor}>
                             {org.name.split(" ")[0].toUpperCase()}
                         </GlowText>

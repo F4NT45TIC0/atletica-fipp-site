@@ -20,6 +20,7 @@ export interface Organization {
     youtube_url: string | null;
     whatsapp: string | null;
     hero_title: string;
+    hero_heading: string | null;
     hero_subtitle: string | null;
     about_text: string | null;
     gallery_photos: string[];
